@@ -13,7 +13,7 @@ int Stock(vector<int>prices){
             bestBuy = min(bestBuy, prices[i]);
         }
         return maxProfit;
-}   
+}
 
 int main(){
     vector<int>prices = {3,5,7,4,8,1,8};
