@@ -3,24 +3,29 @@
 #include<vector>
 
 using namespace std;
-
 int main(){
+vector<int>arr = {2,4,6,8,11,14,23,26,27};
+int n=arr.size();
+int target = 23;
 
-vector<int>arr = {2,4,5,7,9,11,15,16,19,21,25,32,35,38};
+int start = 0;
+int end = n-1;
 
- int n=nums.size(), start = 0, end = n-1, mid;
- int target = 32;
+while( start <= end ){
 
-        while(target = ){
-            mid = (start + end)/2;
-            if(target == mid){
-                cout<<"target matched in first condition";
-            }else if(mid < target){
-                start = mid +1;
-            }else if(mid > target){
-                end  = mid - 1;
-            }else cout<<"Your target is not maching";
-        }
+int mid = start + (end - start) / 2;
 
+//  int mid = (start + end)/2;
+        // cout<<"your answer"<<endl;
+    if(arr[mid] == target){
+        cout<<"Target found at index : "<<mid;
+        // return mid;
+        return 0;
+    }else if(arr[mid] > target){
+        end = mid -1;
+    }else{
+        start = mid +1;
+    }   
+}
     return 0;
 }
