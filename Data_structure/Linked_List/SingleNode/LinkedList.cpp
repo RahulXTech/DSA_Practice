@@ -11,10 +11,13 @@ class NODE{
         next = NULL;
     } 
 };
+
+void insertAtHead(int n)
 int main(){
 //Creating dynamic object
 NODE *HEAD;
 HEAD = new NODE(5);
+
 
     return 0;
 }
