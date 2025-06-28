@@ -5,7 +5,13 @@ using namespace std;
 
 int MaxSumOfCol(int arr[][7], int rows, int cols){
     int MaxColVal = INT_MIN;
-    for(int )
+    for(int i=0; i<rows; i++){
+        for(int j =0; i<cols; j++){
+        MaxColVal +=MaxSumOfCol[i][];
+
+        }
+    }
+    
 }
 
 int main(){
