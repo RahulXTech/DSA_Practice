@@ -1,11 +1,20 @@
 #include<iostream>
 #include<string>
-#include<vector>
+
 using namespace std;
 
+void PrintNums(int num){
+
+if(num == 1){
+    cout<<num;
+    return;
+}
+cout<<num<<" ";
+PrintNums(num-1);
+}
 int main(){
-cout<<"#";
 
-return 0;
+PrintNums(10);
 
+    return 0;
 }
