@@ -5,11 +5,11 @@ using namespace std;
 
 int main(){
 
-auto lamdaFun = [](){
-    cout<<"Your total sum of location : "<<endl;
-};
+// auto lamdaFun = [](){
+//     cout<<"Your total sum of location : "<<endl;
+// };
 
 
-lamdaFun();
+// lamdaFun();
     return 0;
 }
