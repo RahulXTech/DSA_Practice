@@ -39,3 +39,4 @@ int target = 16;
 cout<<Matrix2(matrix, target);
 return 0;
 };
+
