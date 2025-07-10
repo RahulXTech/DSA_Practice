@@ -1,21 +1,26 @@
 #include<iostream>
 #include<string>
-
 using namespace std;
-
-string FirstOccurrence(string needle, string haystack){
-      
+int FirstOccurrence(string needle, string haystack){
+    int inx = 0;
+      for(int i=0; i<haystack.size(); i++){
+        if(needle[inx] == haystack[i]){
+            inx++;
+            if(needle.size()==inx) {
+                i-=inx-1;
+                return i;
+            }
+        }else {
+            i-=inx;
+            inx = 0;
+        }
+      }
+      return -1;
 };
 
 int main(){
-string name1 = "rahul";
-
-for(int i=0; i<name1.length(); i++){
-    cout<<name1[i]<<endl;
-};
-// for(char cha : name1){
-//     cout<<cha<<endl;
-// }
-
+string hay = "mississippi";
+string needle = "issip";
+cout<<FirstOccurrence(needle, hay);
     return 0;
 }
