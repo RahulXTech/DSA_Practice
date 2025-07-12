@@ -15,6 +15,5 @@ int main(){
 vector<string> InputArr = {"abc", "d", "defg"};
 vector<string> TragetArr = {"abcddefg"};
 CheckStringEquileOrNot(InputArr, TragetArr);
-
 return 0;
 }
