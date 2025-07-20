@@ -11,7 +11,6 @@ class Node{
             this->next = next1;
         }
 };
-
 int main(){
 Node* node1 = new Node(232, nullptr);
 cout<<node1<<endl;
