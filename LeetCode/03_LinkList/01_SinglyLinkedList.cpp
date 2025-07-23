@@ -2,19 +2,25 @@
 #include<string>
 using namespace std;
 
-class Node{
-    public:
-        int data;
-        Node* next;
-        Node(int data, Node next1){
-            this->data = data;
-            this->next = next1;
-        }
+struct Node{
+    int data;
+    Node* next;
 };
-int main(){
-Node* node1 = new Node(232, nullptr);
-cout<<node1<<endl;
-// cout<<node1->next<<endl;
 
-return 0;
+void printList(Node* head){
+    Node* temp = head;
+    while(head!=NULL){
+        cout<<temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout<<"Null\n";
+}
+int main(){
+    Node* head = new Node{1, NULL};
+    head->next = new Node {2, NULL};
+    head->next->next = new Node {3, NULL};
+
+    printList(head);
+
+    return 0;
 }
