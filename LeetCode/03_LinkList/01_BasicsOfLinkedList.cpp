@@ -15,7 +15,6 @@ struct Node{
 class List{
     Node* head;
     Node* tail;
-    
     public:
         List(){
             head = NULL;
