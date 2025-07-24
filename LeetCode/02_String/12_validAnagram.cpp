@@ -1,24 +1,21 @@
 #include<iostream>
 #include<string>
+#include<algorithm>
 using namespace std;
 
 bool validAnagram(string s, string t){
-    int count =0;
-    for(int i=0; i<s.length(); i++){
-        for(int j=0; j<t.length(); j++){
-            if(s[i] == t[j]){
-                count++;
-                break;
-            }
-        }
-    }
-    if(count == s.length()) return true;
-    return false;
+   int a = s.length();
+   int b = t.length();
+   if(a!= b) return false;
+
+   sort(s.begin(), s.end());
+   sort(t.begin(), t.end());
+
+   return (s==t);
 }
 int main(){
-
-string s = "ram";
-string t = "ram";
+    string s = "mrp";
+    string t = "ram";
 cout<<validAnagram(s,t);
 
     return 0;
