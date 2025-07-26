@@ -116,7 +116,6 @@ class List{
         cout<<"NULL"<<endl;
     }
 };
-
 int main(){
     List ll;
         ll.push_front(1);
