@@ -1,59 +1,69 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-class Node{
-    public:
-        int data;
-        Node* next;
+class Node
+{
+public:
+    int data;
+    Node *next;
 
-        Node(int data){
-            this->data = data;
-            this->next = NULL;
-        }
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
 };
-class List{
-    public:
-        Node* head;
-        Node* tail;
-        List(){
-            head =  NULL;
-            tail = NULL;
+class List
+{
+public:
+    Node *head;
+    Node *tail;
+    List()
+    {
+        head = NULL;
+        tail = NULL;
+    }
+    void push_back(int val)
+    {
+        Node *newNode = new Node(val);
+        if (head == NULL)
+        {
+            head = tail = newNode;
         }
-        void push_back(int val){
-            Node* newNode = new Node(val);
-            if(head == NULL){
-                head = tail = newNode;
-            }else{
-                tail->next = newNode;
-                tail = newNode;
-            }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
         }
-        void displayNodes(){
-            Node* temp = head;
-            while(temp!=NULL){
-                cout<<temp->data<<" -> ";
-                temp = temp->next;
-            }
-            cout<<"NULL"<<endl;
+    }
+    void displayNodes()
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << " -> ";
+            temp = temp->next;
         }
+        cout << "NULL" << endl;
+    }
 
-        void findMidNode(){
-            Node* slow = head;
-            Node* fast = head;
+    void findMidNode()
+    {
+        Node *slow = head;
+        Node *fast = head;
 
-            while(fast!=NULL && fast->next != NULL){
-                slow = slow->next;
-                fast = fast->next->next;
-            }
-            cout<<"your mid node is : "<<slow->data;
+        while (fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
         }
+        cout << "your mid node is : " << slow->data;
+    }
 };
-
-
-
-int main(){
+int main()
+{
     List LL;
     LL.push_back(32);
     LL.push_back(23);
