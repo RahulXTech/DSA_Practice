@@ -20,7 +20,6 @@ bool validParentheses(string str){
     }
     return s.size() == 0;
 };
-
 int main(){
 string str =  "{[()]}";
 cout<<validParentheses(str);
