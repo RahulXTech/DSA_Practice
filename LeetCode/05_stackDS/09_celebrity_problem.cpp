@@ -34,7 +34,7 @@ int identifyCelebrity(vector<vector<int>>arr){
 int main(){
     vector<vector<int>> arr = {{0, 1, 0},
                             {0, 0, 0},
-                            {0, 1, 0},
+                            {0, 1, 0}
                             };
     int ans = identifyCelebrity(arr);
     cout<<"Celebrity is : "<< ans<<endl;
