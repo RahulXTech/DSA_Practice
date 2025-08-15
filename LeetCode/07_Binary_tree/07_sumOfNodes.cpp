@@ -22,15 +22,24 @@ Node* buildingB_Tree(vector<int>arr){
     root->right = buildingB_Tree(arr);
     return root;
  };
+ int countOfNodes(Node* root){
+    if(root == NULL) return 0;
 
+    int leftCount = countOfNodes(root->left);
+    int rightCount = countOfNodes(root->right);
+
+    return leftCount+rightCount+1;
+ }
 int sumOfNodes(Node* root){
     if(root == NULL) return 0;
+    int leftSum = sumOfNodes(root->left);
+    int rightSum = sumOfNodes(root->right);
+    return leftSum+rightSum+root->data;
 }
-
 int main(){
 vector<int>arr = {1,2,-1,-1, 3,4,-1,-1,5,-1,-1};
 Node* root = buildingB_Tree(arr);
-cout<<root->left->data;
-
+// cout<<root->left->data;
+cout<<"Total sum of nodes : "<<sumOfNodes(root);
     return 0;
-}
+};
