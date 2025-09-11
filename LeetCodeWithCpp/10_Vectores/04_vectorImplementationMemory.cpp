@@ -2,7 +2,6 @@
 #include<vector>
 using namespace std;
 int main(){
-
     vector<int>vec1 = {1,2,3,4};
     cout<<"Size : "<< vec1.size()<<endl; //4
     cout<<"Capacity : "<<vec1.capacity()<<endl; //4
