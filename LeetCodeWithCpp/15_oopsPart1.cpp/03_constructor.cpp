@@ -10,6 +10,11 @@ class Student{
         Student(){
             cout<<"Constructor will call automaticaly when you create a object if you will not cretate manualy constructor then compiler will create internely"<<endl;
         }
+        Student(string name, int enrollment){
+            this->name = name; //first one name for object second one name for parameater.
+            this->enrollment=enrollment;
+
+        }
 };
 
 int main(){
