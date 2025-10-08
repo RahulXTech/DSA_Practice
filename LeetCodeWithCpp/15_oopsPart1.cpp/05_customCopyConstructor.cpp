@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
 class Car{
     public:
         string name;
@@ -18,7 +17,6 @@ class Car{
         color = Original.color;
     }
 };
-
 
 int main(){
     Car c1("Scorpio 800", "black");
