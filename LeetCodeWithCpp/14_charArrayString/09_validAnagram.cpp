@@ -22,8 +22,6 @@ bool checkValidAnagram(string str1, string str2){
     }
     cout<<"valid anagrams\n";
 };
-
-
  
 int main(){
 string str1 = "anagram";

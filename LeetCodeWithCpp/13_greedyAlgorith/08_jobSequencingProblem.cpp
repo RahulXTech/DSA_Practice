@@ -30,7 +30,5 @@ int main(){
     jobs[3] = make_pair(1,30);
 
    cout<<"Total profit is : "<<jobSequencing(jobs)<<" under the deadline"<<endl;
-   
- 
     return 0;
 }
