@@ -36,12 +36,12 @@ class List{
                 cout<<temp->data<<" -> ";
                 temp = temp->next;
             }
-            cout<<"NULL";
+            cout<<"NULL"<<endl;
         }
 
         void pop_back(){
             if(head == NULL){
-                cout<<"sorry your LL is Empty";
+                cout<<"sorry your LL is Empty"<<endl;
             }
 
             Node* temp = head;
@@ -61,6 +61,7 @@ int main(){
     ll.push_back(21);
     ll.push_back(93);
     ll.push_back(43);
+    ll.printLL();
     ll.pop_back();
     ll.printLL();
     return 0;
