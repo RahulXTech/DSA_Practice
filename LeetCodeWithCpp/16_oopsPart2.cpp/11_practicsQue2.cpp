@@ -12,12 +12,10 @@ class Derived : public Base{
             std::cout<<"Derived of function in the class........."<<std::endl;
         }
 };
-
 int main(){
     Base* b= new Derived();
     b->print();
     delete b;
-
 
     return 0;
 }
