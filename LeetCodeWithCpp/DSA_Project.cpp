@@ -15,6 +15,7 @@ class Book{
             this->title = title;
             this->author = author;
             this->price = price;
+            this->next = NULL;
         }
 };
 class Library{
@@ -23,44 +24,47 @@ class Library{
         Library(){
             head = NULL;
         }
-    //Add new books in library
-    void addNewBook(int id, string title, string author, float price){
-        Book* newBook = new Book(id, title, author, price);
 
-        if(head == NULL){
-            head = newBook;
-            cout<<"Book added as first record \n";
-            return;
-        }
-        Book* temp = head;
-        while(temp != NULL){
-            temp = temp->next;
+    //Add new books in library=============================================
+    void addNewBook(int id, string title, string author, float price) {
+    Book* newBook = new Book(id, title, author, price);
+    newBook->next = NULL;
 
-            temp->next = newBook;
-            cout<< "Book added successfully \n";
-        }
+    if (head == NULL) {
+        head = newBook;
+        cout << "Book added as first record.\n";
+        return;
     }
-    //Display all books
+
+    Book* temp = head;
+    while (temp->next != NULL) { // stop at last node
+        temp = temp->next;
+    }
+    temp->next = newBook;
+    cout << "Book added successfully.\n";
+}
+
+    //Display all books===============================================
     void displayAllBooks(){
         if(head == NULL){
             cout<<"No book in library. \n";
             return;
         }
 
-        cout<<"-- Library Books -- \n";
+        cout<<"------------Library Books--------------- \n";
         Book* temp = head;
-        while(temp!=head){
-            cout<<"ID;"<<temp->id<< ", Title: "<<temp->title<<", Autor: "<<temp->author<<", price: Rs"<<temp->price<<endl;
+        while(temp!=NULL){
+            cout<<"ID: "<<temp->id<< " || Title: "<<temp->title<<" || Author: "<<temp->author<<" || price: Rs"<<temp->price<<endl;
             temp = temp->next;
         }
 
     }
 
-    //Search for a book..
+    //Search for a book=========================================
     void serchBook(int id){
         Book* temp  = head;
         while(temp!=NULL){
-            if(id == temp->id){
+            if(temp->id == id){
                 cout<<"Book Found! \n Title: "<<temp->title<<", Author: "<<temp->author<<", Price: Rs"<<temp->price<<endl;
                 return;
             }
@@ -68,32 +72,57 @@ class Library{
         }
         cout<<"Book not found!!!!!!!!!!\n";
     }
-    //Delete a book
-    void deleteBook(int id){
-        if(head == NULL){
-            cout<<"No books to delete. \n";
-            return;
-        }
-        Book* temp  = head;
-        while(temp!=NULL && temp->next->id!=id){
+    //Delete a book========================================
+    void deleteBook(int id) {
+    if (head == NULL) {
+        cout << "No books to delete.\n";
+        return;
+    }
+
+    // if head needs to be deleted
+    if (head->id == id) {
+        Book* toDelete = head;
+        head = head->next;
+        delete toDelete;
+        cout << "Book deleted successfully!\n";
+        return;
+    }
+
+    Book* temp = head;
+    while (temp->next != NULL && temp->next->id != id) {
+        temp = temp->next;
+    }
+
+    if (temp->next == NULL) {
+        cout << "Book not found!\n";
+        return;
+    }
+
+    Book* toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete toDelete;
+    cout << "Book deleted successfully!\n";
+}
+
+    //Update book data========================================
+    void updateBook(int oldId, string updateTitleName, string updateAuthorName, bool updatePrice){
+        Book* temp = head;
+        while(temp != NULL){
+            if(temp->id == oldId){
+                temp->id = oldId;
+                temp->title = updateTitleName;
+                temp->author = updateAuthorName;
+                temp->price = updatePrice;
+                cout<<"SuccessFully Updated.........\n";
+                return;
+            }
             temp = temp->next;
         }
-        if(temp == NULL){
-            cout<<"Book not found! \n";
-            return;
-        }
-        temp = temp->next->next;
-        cout<<"Book deleted successfully!\n";
+        cout<<"book id mismatch."<<endl;
     }
 
 
-    void displayAllBooks(){
-        
-    };
 };
-
-
-
 
 int main(){
     Library lib;
@@ -111,6 +140,12 @@ int main(){
         cout<<"6. Exit\n";
         cout<<"Enter your choice: ";
         cin>>choice;
+    
+    // Check invalid input.
+        if(choice<1 || choice>6){
+            cout<<"!!!!!!!!!!!!!!!!!!!!!!Oho Invalid Input Please Enter Between 1 to 6 !!!!!!!!!!! \n";
+            continue;
+        }
 
         switch(choice){
             case 1:
@@ -135,25 +170,26 @@ int main(){
                 cout<<"Enter Books ID to delete: ";
                 cin>>id;
                 lib.deleteBook(id);
-            // case 5:
-            //     cout<<"Enter Book ID to update: \n";
-            //     cin>>id;
-            //     cin.ignore();
-            //     cout<<"Enter new Title, Author, Price:";
-            //     getline(cin, title);
-            //     getline(cin, author);
-            //     cin>>price;
-            //     lib.updateBook(id, title, author, price);
-            //     break;
+                break;
+            case 5:
+                cout<<"Enter Book ID to update: ";
+                cin>>id;
+                cin.ignore();
+                cout<<"Enter new Title, Author, Price:";
+                getline(cin, title);
+                getline(cin, author);
+                cin>>price;
+                lib.updateBook(id, title, author, price);
+                break;
 
             case 6:
                 cout<<"Exiting program...\n";
                 break;
             default:
                 cout<<"Invalid choice!\n";
+                break;
         }
     }while(choice !=6);
-
 
     return 0;
 }
