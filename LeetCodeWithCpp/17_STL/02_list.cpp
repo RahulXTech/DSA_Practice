@@ -17,9 +17,11 @@ int main(){
     l2.push_front(3);
     l2.push_front(2);
     l2.push_front(1);
+
 //Deletion operations.
     l2.pop_back();
     l2.pop_front();
+
 //Traversal operations
     for(auto val : l2){
         cout<<val<<" ";
@@ -45,6 +47,10 @@ int main(){
     for(auto iterator1 = l2.begin(); iterator1!=l2.end(); iterator1++){
         cout<<*iterator1<<" ";
     }
-    cout<<endl;   
+    cout<<endl;  
+    
+    
+
+    
     return 0;
 }
