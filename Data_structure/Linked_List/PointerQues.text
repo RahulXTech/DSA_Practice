@@ -1,0 +1,29 @@
+Level 1: Basics of Pointers
+Write a program to declare an integer pointer, assign the address of a variable to it, and print the value using the pointer.
+Swap two numbers using pointers.
+Create a function that takes a pointer to an integer and modifies its value.
+Write a program to find the sum of elements in an array using pointers.
+Explain the difference between *ptr and &ptr.
+
+🔹 Level 2: Pointer Arithmetic
+Print the elements of an array using pointer arithmetic.
+Write a function that takes a pointer to an array and returns the maximum element.
+Create a function to reverse an array using pointers.
+Explain what happens when you increment or decrement a pointer.
+
+🔹 Level 3: References
+Create a function that swaps two integers using references.
+Write a function that takes a reference to a string and converts it to uppercase.
+What is the difference between a pointer and a reference? Give examples.
+
+🔹 Level 4: Pointers and References in Functions
+Write a function that returns a reference to the largest element in an array.
+Pass a pointer to a function to allocate memory dynamically.
+Write a function that modifies a structure using reference.
+
+🔹 Level 5: Advanced Concepts
+Create a program that uses a pointer to a pointer.
+Implement a dynamic array using new and delete with pointers.
+Demonstrate the use of const int*, int* const, and const int* const.
+Write a function that takes a reference to a pointer and allocates memory.
+Difference between reference to pointer vs. pointer to reference – is it valid?
