@@ -17,8 +17,9 @@ int numTiling(int n){
     return numTiling(n-1)+numTiling(n-2);
 }
 
+
 int main(){
     cout<<numTiling(5);
-
+    
     return 0;
 }
