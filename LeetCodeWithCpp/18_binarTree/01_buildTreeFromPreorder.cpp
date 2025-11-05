@@ -14,13 +14,13 @@ class Node{
     };
     //===============================build a binary tree preorder sequence============================
 static int idx = -1;
-Node* buildPreorderTree(vector<int>arr){
+Node* buildTree(vector<int>arr){
     idx++;
     if(arr[idx] == -1) return NULL;
 
     Node* newNode = new Node(arr[idx]);//2
-    newNode->left = buildPreorderTree(arr);//left subtree
-    newNode->right = buildPreorderTree(arr);//right subtree
+    newNode->left = buildTree(arr);//left subtree
+    newNode->right = buildTree(arr);//right subtree
 
     return newNode;
 }
@@ -36,7 +36,7 @@ void traverseBTPreoreder(Node* headRoot){
 
 int main(){
     vector<int>arrs = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-    Node* root = buildPreorderTree(arrs);
+    Node* root = buildTree(arrs);
 
     traverseBTPreoreder(root);
         
