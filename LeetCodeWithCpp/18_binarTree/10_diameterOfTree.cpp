@@ -38,6 +38,7 @@ int diameterOfTree(Node* root){
     if(root == NULL) return 0;
     
     int currDia = heightT(root->left)+heightT(root->right)+1;
+     
     int leftDia = diameterOfTree(root->left);
     int rightDia = diameterOfTree(root->right);
 
