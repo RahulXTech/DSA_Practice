@@ -12,9 +12,6 @@ class Node{
         left = right = NULL;
     }
 };
-
-
-
 void KthLevelRecursive(Node* root, int k, int currLevel){
     if(root == NULL) return;
     if(currLevel == k){
