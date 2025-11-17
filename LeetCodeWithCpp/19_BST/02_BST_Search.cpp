@@ -44,6 +44,7 @@ void inorder(Node* root){
     cout<<root->data<<" ";
     inorder(root->right);
 }
+
 //////////////////Searching in BST///////////////////////////
 bool searchBST(Node* root, int key){
     if(root == NULL) return NULL;
@@ -55,13 +56,11 @@ bool searchBST(Node* root, int key){
 
     return false;
 }
-
 int main(){
     int arr[6] = {5,1,3,4,2,7};
     Node* root = buildBST(arr,6);
     inorder(root);
     cout<<endl;
-
     cout<<"Answer : "<<searchBST(root, 3)<<endl;
 
     return 0;
