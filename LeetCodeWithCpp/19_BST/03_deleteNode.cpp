@@ -73,10 +73,10 @@ Node* delNode(Node* root, int val){
        Node* IS = getInorderSuccessor(root->right);
        root->data = IS->data;
        root->right = delNode(root->right, IS->data);
+       
     }
-        
-    
 }
+
 int main(){
 int arr[6] = {5,1,3,4,2,7};
     Node* root = buildBST(arr,6);

@@ -63,9 +63,6 @@ void printInRange2(Node* root, int start, int end){
     }else if(root->data<end)
         printInRange2(root->left, start, end);
 }
-
-
-
 int main(){
     vector<int>arr = {5,1,3,4,2,7};
     Node* root = buildBST(arr);
