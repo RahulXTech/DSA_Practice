@@ -76,7 +76,6 @@ Node* delNode(Node* root, int val){
        
     }
 }
-
 int main(){
 int arr[6] = {5,1,3,4,2,7};
     Node* root = buildBST(arr,6);

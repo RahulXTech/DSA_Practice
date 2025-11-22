@@ -49,8 +49,9 @@ Node* deleteNode(Node* root, int target){
         }
         //Case 2 children
         Node* IS = getInOrderSuccessor(root->right);
-        
+        root->data = IS->data;
 
+        root->right = deleteNode(root->right, IS->data);
     }
 };
 void printEle(Node* root){
@@ -60,7 +61,6 @@ void printEle(Node* root){
     cout<<root->data<<" ";
     printEle(root->left);
 };
-
 
 int main(){
     vector<int>array = {3,4,5,3,54,6,7,7,56,};
